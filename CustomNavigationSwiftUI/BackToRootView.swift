@@ -15,12 +15,7 @@ struct BackToRootView: View {
             Image(systemName: "arrow.left")
             Text("Back to Root")
         }
-        .font(.callout)
-        .foregroundColor(.white)
+        .foregroundColor(.black)
         .onTapGesture(perform: action)
     }
-}
-
-#Preview {
-    ContentView()
 }

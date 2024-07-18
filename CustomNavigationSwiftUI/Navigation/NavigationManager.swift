@@ -16,15 +16,15 @@ final class NavigationManager: ObservableObject {
     @Published var screens: [Screen] = []
     
     func pushView(_ view: AnyView) {
-        addScreen(Screen(view: view, transition: .slide))
+        screens.append(Screen(view: view, transition: .slide))
     }
     
     func presentView(_ view: AnyView) {
-        addScreen(Screen(view: view, transition: .move(edge: .bottom)))
+        screens.append(Screen(view: view, transition: .move(edge: .bottom)))
     }
     
     func customView(_ view: AnyView) {
-        addScreen(Screen(view: view, transition: .scale))
+        screens.append(Screen(view: view, transition: .scale))
     }
     
     func popView() {
@@ -33,9 +33,5 @@ final class NavigationManager: ObservableObject {
     
     func returnToRoot() {
         screens.removeAll()
-    }
-    
-    private func addScreen(_ screen: Screen) {
-        screens.append(screen)
     }
 }

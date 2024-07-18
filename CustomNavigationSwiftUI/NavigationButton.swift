@@ -14,17 +14,14 @@ struct NavigationButton: View {
     var body: some View {
         Button(action: action) {
             Text(title)
-                .font(.headline)
                 .foregroundColor(.white)
-                .frame(height: 50)
+                .padding()
                 .frame(maxWidth: .infinity)
-                .background(Color.blue)
-                .cornerRadius(10)
-                .shadow(color: Color.blue.opacity(0.3), radius: 10, x: 0, y: 10)
+                .background(
+                    LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .leading, endPoint: .trailing)
+                )
+                .cornerRadius(15)
         }
+        .padding(.horizontal)
     }
-}
-
-#Preview {
-    ContentView()
 }

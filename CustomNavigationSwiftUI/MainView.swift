@@ -15,10 +15,10 @@ struct MainView: View {
     
     var body: some View {
         NavigationContainer {
-            ContentView()
+            CustomContentView()
         }
-        .pushNavigation(view: ContentView().eraseToAnyView(), isActive: showPushView)
-        .presentNavigation(view: ContentView().eraseToAnyView(), isActive: showPresentView)
-        .customNavigation(view: ContentView().eraseToAnyView(), isActive: showCustomView)
+        .pushNavigation(view: PushContentView().eraseToAnyView(), isActive: showPushView)
+        .presentNavigation(view: PresentContentView().eraseToAnyView(), isActive: showPresentView)
+        .customNavigation(view: CustomContentView().eraseToAnyView(), isActive: showCustomView)
     }
 }
