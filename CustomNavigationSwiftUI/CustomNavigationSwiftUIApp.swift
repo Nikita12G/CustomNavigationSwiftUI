@@ -8,10 +8,11 @@
 import SwiftUI
 
 @main
-struct CustomNavigationSwiftUIApp: App {
+struct CustomNavigationSwiftUI: App {
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-        }
+            MainView().environmentObject(NavigationManager())
+         }
     }
 }
